@@ -1,0 +1,51 @@
+<title>Anonymous Q&A Card</title>
+<style>
+  /* layout: single centered card on a dark ground, matching the card's own palette */
+  :root{
+    --bg:#f4f4f5;
+    --fg:#18181b;
+    --card-shadow: rgba(0,0,0,.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0f0f12;
+      --fg:#f4f4f5;
+      --card-shadow: rgba(0,0,0,.5);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0f0f12;
+    --fg:#f4f4f5;
+    --card-shadow: rgba(0,0,0,.5);
+    color-scheme: dark;
+  }
+
+  body{
+    background: var(--bg);
+    color: var(--fg);
+    min-height: 100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding-inline: 16px;
+    padding-block: 32px;
+    box-sizing: border-box;
+  }
+  html, body{ height:100%; }
+
+  .frame{
+    width: min(360px, 100%);
+  }
+
+  img.card{
+    display:block;
+    width:100%;
+    border-radius: 18px;
+    box-shadow: 0 16px 40px var(--card-shadow);
+  }
+</style>
+
+<div class="frame">
+  <img class="card" src="ngl.webp" alt="Send me anonymous messages card">
+</div>
